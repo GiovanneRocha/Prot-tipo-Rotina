@@ -1,33 +1,31 @@
-# Minha Rotina – Protótipo (HTML/CSS/JS)
+# Minha Rotina – Protótipo v2 (HTML/CSS/JS)
 
-Protótipo simples e funcional para organizar sua rotina diária com:
+Agora com **Metas diárias** e **Notas do dia**! 🎯📝
 
-- ✅ Rotina com checklist (salva por dia via `localStorage`)
-- 🔔 Lembretes antes de cada atividade (notificações do navegador + som)
-- 📈 Relatório rápido dos últimos 7 dias
-- ⏱️ Pomodoro de estudos (25/5/15)
-- 💡 Sugestões de microtarefas com base no tempo livre até a próxima atividade
-- 🌓 Tema claro/escuro
+## Novidades
+- **Metas do dia**
+  - Adicione metas rápidas (Enter ou botão ➕)
+  - Marque como concluída ✅, edite ✏️ ou exclua 🗑️
+  - Barra de **progresso** e contador (concluídas/total)
+  - **Limpar concluídas** e **Levar pendentes para amanhã** (copia as metas não concluídas para a data de amanhã)
+- **Notas do dia**
+  - Campo de texto com **autosave** (salva 500ms após parar de digitar)
+  - Indicador "Salvo às HH:MM" e botão **Limpar notas**
 
-> **Observação:** Lembretes são disparados enquanto a aba estiver aberta. Para lembretes em segundo plano (mesmo com a aba fechada), é necessário implementar Service Worker e/ou um backend para push notifications – fora do escopo deste protótipo.
+> Tudo é salvo **por dia** usando `localStorage` e funciona **offline** no navegador.
 
 ## Como usar
+1. Abra `index.html` no navegador.
+2. Clique em **"🔔 Ativar lembretes"** para permitir notificações (opcional).
+3. Cadastre suas **metas** do dia (seção "Metas do dia").
+4. Anote o que for importante em **Notas do dia**.
+5. Use o **Pomodoro** e acompanhe o **Relatório (7 dias)** como antes.
 
-1. Baixe o `.zip` e extraia.
-2. Abra o arquivo `index.html` no navegador (Chrome/Edge/Firefox).
-3. Clique em **"🔔 Ativar lembretes"** para permitir notificações.
-4. Ajuste a rotina em **Editar rotina** se quiser.
-5. Use o Pomodoro e acompanhe suas métricas semanais.
-
-## Personalização rápida
-
-- **Minutos antes para lembrete:** campo no topo da seção "Rotina do dia".
-- **Editar/Salvar rotina:** dentro de **✏️ Editar rotina**.
-- **Restaurar padrão:** volta para a rotina fornecida no briefing.
-- **Tema:** botão 🌓 no topo.
+## Observações
+- O botão **Levar pendentes para amanhã** apenas **copia** as metas não concluídas para o próximo dia; não altera as metas do dia atual.
+- Lembretes só disparam com a **aba aberta** (para funcionar em segundo plano é preciso evoluir para PWA com Service Worker).
 
 ## Estrutura
-
 ```
 ./
 ├── index.html
@@ -35,14 +33,9 @@ Protótipo simples e funcional para organizar sua rotina diária com:
 └── app.js
 ```
 
-## Próximos passos (se quiser evoluir)
-
-- PWA com Service Worker para lembretes mesmo com a aba fechada.
-- Integração com Google Calendar (OAuth + sync).
-- Exportar/Importar rotina em JSON.
-- Modo foco (esconde distrações e foca na atividade atual).
-- Estatísticas detalhadas (por atividade, horários, consistência mensal).
-
-## Licença
-
-Código livre para uso pessoal e educacional.
+## Próximos passos (opcionais)
+- PWA + Service Worker para lembretes com a aba fechada
+- Exportar/Importar dados (metas, notas, rotina) em JSON
+- Tags e prioridade nas metas (ex.: Estudo, Saúde, Trabalho)
+- Linkar metas com horários da rotina (ex.: sugerir meta dentro de janelas livres)
+- Sincronização em nuvem (Google Drive/Calendar)

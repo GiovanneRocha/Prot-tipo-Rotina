@@ -16,6 +16,7 @@ body {
   --secondary: #1f2937; /* gray-800 */
   --accent: #38bdf8; /* sky-400 */
   --border: #374151; /* gray-700 */
+  --danger: #ef4444;
 }
 
 body.light {
@@ -87,5 +88,23 @@ button:disabled { opacity: .7; cursor: not-allowed; }
 .suggestions li { padding: 8px; border: 1px dashed var(--border); border-radius: 8px; }
 
 /* Toast */
-.toast { position: fixed; bottom: 16px; right: 16px; background: var(--card); color: var(--fg); padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.25); opacity: 0; transform: translateY(8px); transition: .25s ease; max-width: 320px; }
+.toast { position: fixed; bottom: 16px; right: 16px; background: var(--card); color: var(--fg); padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.25); opacity: 0; transform: translateY(8px); transition: .25s ease; max-width: 360px; }
 .toast.show { opacity: 1; transform: translateY(0); }
+
+/* Goals */
+.goals-add { display: flex; gap: 8px; align-items: center; }
+.goals-add input { flex: 1; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--fg); }
+.goals { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
+.goals li { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; padding: 10px; border: 1px dashed var(--border); border-radius: 10px; }
+.goal-title { overflow-wrap: anywhere; }
+.goal-title.done { text-decoration: line-through; color: var(--muted); }
+.goal-actions { display: flex; gap: 6px; }
+.goal-actions button { padding: 6px 8px; }
+.goals-actions { display: flex; gap: 8px; }
+.goals-progress { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.progress { flex: 1; height: 10px; background: rgba(148,163,184,.15); border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--primary)); width: 0%; }
+
+/* Notes */
+#notesArea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--fg); resize: vertical; }
+.notes-footer { margin-top: 8px; display: flex; align-items: center; justify-content: space-between; }

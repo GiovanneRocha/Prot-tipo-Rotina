@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Minha Rotina – Protótipo</title>
+  <title>Minha Rotina – Protótipo v2</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,9 +28,7 @@
         </label>
         <button id="btnReprogramar" class="secondary">Reprogramar lembretes</button>
       </div>
-
       <ul id="scheduleList" class="schedule"></ul>
-
       <details class="edit">
         <summary>✏️ Editar rotina</summary>
         <p class="hint">Edite horários (HH:MM) e nomes das atividades. Clique em "Salvar" para aplicar e reprogramar lembretes.</p>
@@ -40,6 +38,36 @@
           <button id="btnRestaurarPadrao" class="secondary">Restaurar padrão</button>
         </div>
       </details>
+    </section>
+
+    <section class="card">
+      <h2>Metas do dia</h2>
+      <div class="goals-add">
+        <input type="text" id="goalInput" placeholder="Adicionar nova meta... (Enter para adicionar)" />
+        <button id="btnAddGoal" class="primary">➕ Adicionar</button>
+      </div>
+      <div class="goals-progress">
+        <div class="progress">
+          <div id="goalsProgressBar" class="progress-bar" style="width:0%"></div>
+        </div>
+        <span id="goalsProgressText" class="muted">0/0 (0%)</span>
+      </div>
+      <ul id="goalsList" class="goals"></ul>
+      <div class="goals-actions">
+        <button id="btnClearDone" class="secondary">🧹 Limpar concluídas</button>
+        <button id="btnCarryForward" class="secondary">➡️ Levar pendentes para amanhã</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Notas do dia</h2>
+      <textarea id="notesArea" rows="6" placeholder="Anote ideias, lembretes, pontos da aula/treino, etc."></textarea>
+      <div class="notes-footer">
+        <span id="notesStatus" class="muted">—</span>
+        <div class="notes-actions">
+          <button id="btnClearNotes" class="secondary">🗑️ Limpar notas</button>
+        </div>
+      </div>
     </section>
 
     <section class="card">
@@ -56,7 +84,7 @@
           <button id="pomStart" class="primary">▶️ Iniciar</button>
           <button id="pomPause" class="secondary">⏸️ Pausar</button>
           <button id="pomReset" class="secondary">⟲ Resetar</button>
-          <label>Ciclo: 
+          <label>Ciclo:
             <select id="pomMode">
               <option value="work" selected>Trabalho (25)</option>
               <option value="short">Pausa curta (5)</option>
