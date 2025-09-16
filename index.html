@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minha Rotina – Protótipo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>📅 Minha Rotina</h1>
+      <p id="todayStr"></p>
+    </div>
+    <div class="actions">
+      <button id="btnNotif" class="secondary">🔔 Ativar lembretes</button>
+      <button id="btnDark" class="secondary">🌓 Tema</button>
+      <button id="btnResetDia" class="secondary">♻️ Reset do dia</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Rotina do dia</h2>
+      <div class="settings-row">
+        <label>Minutos antes para lembrete:
+          <input type="number" id="minutesBefore" min="0" max="120" step="5" value="10" />
+        </label>
+        <button id="btnReprogramar" class="secondary">Reprogramar lembretes</button>
+      </div>
+
+      <ul id="scheduleList" class="schedule"></ul>
+
+      <details class="edit">
+        <summary>✏️ Editar rotina</summary>
+        <p class="hint">Edite horários (HH:MM) e nomes das atividades. Clique em "Salvar" para aplicar e reprogramar lembretes.</p>
+        <div id="editList" class="edit-grid"></div>
+        <div class="edit-actions">
+          <button id="btnSalvarRotina" class="primary">Salvar</button>
+          <button id="btnRestaurarPadrao" class="secondary">Restaurar padrão</button>
+        </div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Relatório rápido (7 dias)</h2>
+      <div id="weeklyStats" class="weekly"></div>
+      <p id="weeklySummary" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <h2>Pomodoro de Estudos</h2>
+      <div class="pomodoro">
+        <div class="timer" id="pomodoroTimer">25:00</div>
+        <div class="pom-controls">
+          <button id="pomStart" class="primary">▶️ Iniciar</button>
+          <button id="pomPause" class="secondary">⏸️ Pausar</button>
+          <button id="pomReset" class="secondary">⟲ Resetar</button>
+          <label>Ciclo: 
+            <select id="pomMode">
+              <option value="work" selected>Trabalho (25)</option>
+              <option value="short">Pausa curta (5)</option>
+              <option value="long">Pausa longa (15)</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <button id="btnSugestoes" class="secondary">💡 Sugestões para agora</button>
+      <ul id="suggestions" class="suggestions"></ul>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
